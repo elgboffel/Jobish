@@ -1,0 +1,105 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<section class="page-title page-title-4 bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="uppercase mb0">FAQ</h3>
+            </div>
+            <div class="col-md-6 text-right">
+                @{Html.RenderPartial("_Breadcrumb");}
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h4 class="mb16">Typisk stillede spørgsmål</h4>
+                <p class="lead mb64">
+                    Hej,
+                    <a href="@CurrentPage.Site().FirstChild("ContactPage").Url">kontakt</a> os hvis du har andre spørgsmål, så vil vi gøre vores bedste for, at svare hurtigst muligt.
+                </p>
+            </div>
+        </div>
+        <!--end of row-->
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <ul class="accordion accordion-2">
+                    <li>
+                        <div class="title">
+                            <h4 class="inline-block mb0">Is Foundry fully responsive?</h4>
+                        </div>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h4 class="inline-block mb0">Where can I purchase this template?</h4>
+                        </div>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h4 class="inline-block mb0">Do I need to be a pro to use this?</h4>
+                        </div>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h4 class="inline-block mb0">Is it ok if I buy 400 copies?</h4>
+                        </div>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <!--end of accordion-->
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<section class="image-bg overlay parallax">
+    <div class="background-image-holder">
+        <img alt="Background" class="background-image" src="~/img/cover10.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h4 class="uppercase mb16">Klar til at blive medlem?</h4>
+                <p class="lead mb64">
+                    Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.
+                </p>
+            </div>
+        </div>
+        <!--end of row-->
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <a class="btn" href="#">Opret</a>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>

@@ -1,13 +1,25 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
+@{
+    var home = CurrentPage.Site();
+
+    var selection = CurrentPage.Site().Children();
+
+    var memberDropdown = @Umbraco.Content(1074);
+
+    var login = memberDropdown.FirstChild("LoginPage");
+
+    var register = memberDropdown.FirstChild("RegisterPage");
+}
+
 <div class="nav-container">
     <a id="top"></a>
-    <nav class="bg-dark">        
+    <nav class="bg-dark">
         <div class="nav-bar">
             <div class="module left">
-                <a href="index.html">
-                    <img class="logo logo-light" alt="Foundry" src="img/logo-light.png" />
-                    <img class="logo logo-dark" alt="Foundry" src="img/logo-dark.png" />
+                <a href="@home.Url">
+                    <img class="logo logo-light" alt="Foundry" src="~/img/logo-light.png" />
+                    <img class="logo logo-dark" alt="Foundry" src="~/img/logo-dark.png" />
                 </a>
             </div>
             <div class="module widget-handle mobile-toggle right visible-sm visible-xs">
@@ -16,44 +28,42 @@
             <div class="module-group right">
                 <div class="module left">
                     <ul class="menu">
-                        <li class="has-dropdown">
-                            <a href="#">
-                                Info
-                            </a>
-                            <ul class="mega-menu">
-                                <li>
-                                    <ul>
+                        @foreach (var item in selection.Where("showInNavigation == true"))
+                        {
+                            if (item.DocumentTypeAlias == "DropdownMenu")
+                            {
+
+
+                                <li class="has-dropdown ">
+                                    <a href="javascript:void(0)" class="@(item.IsAncestorOrSelf(CurrentPage) ? "current" : null)">
+                                        @item.Name
+                                    </a>
+                                    <ul class="mega-menu">
                                         <li>
-                                            <a href="home-adventure.html">Om Jobish</a>
-                                        </li>
-                                        <li>
-                                            <a href="home-agency.html">Ledige</a>
-                                        </li>
-                                        <li>
-                                            <a href="home-app-landing.html">Erhverv</a>
+                                            <ul>
+                                                @foreach (var subitem in item.Children.Where("showInNavigation == true"))
+                                                {
+                                                    <li>
+                                                        <a href="@subitem.Url">@subitem.Name</a>
+                                                    </li>
+                                                   
+                                                }
+                                            </ul>
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
-                        </li>
-                        
-                        <li>
-                            <a href="#">
-                                Blog
-                            </a>                           
-                        </li>
-                        <li>
-                            <a href="#">
-                                FAQ
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Kontakt
-                            </a>
-                        </li>
-                        
-                         
+                            }
+                            else
+                            {
+                                <li class="@(item.IsAncestorOrSelf(CurrentPage) ? "current" : null)">
+                                    <a href="@item.Url">
+                                        @item.Name
+                                    </a>
+                                </li>
+                            }
+
+                        }
+
                     </ul>
                 </div>
                 <!--end of menu module-->
@@ -64,21 +74,21 @@
                     </div>
                     <div class="function">
                         <form class="search-form">
-                            <input type="text" placeholder="Type Here" />
+                            <input type="text" placeholder="Skriv hvad du søger" />
                         </form>
                     </div>
                 </div>
-              
+
                 <div class="module widget-handle language left">
                     <ul class="menu">
                         <li class="has-dropdown">
-                            <a href="#">Login / Register</a>
+                            <a href="javascript:void(0)">@memberDropdown.Name</a>
                             <ul>
                                 <li>
-                                    <a href="#">Login</a>
+                                    <a href="@login.Url">@login.Name</a>
                                 </li>
                                 <li>
-                                    <a href="#">Register</a>
+                                    <a href="@register.Url">@register.Name</a>
                                 </li>
                             </ul>
                         </li>

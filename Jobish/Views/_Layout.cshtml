@@ -5,18 +5,18 @@
 
 
 <!doctype html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="utf-8">
-    <title>Foundry Multi-purpose HTML Template</title>
+    <title>"Jobish"</title>
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/ytplayer.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/ytplayer.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/theme-red.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/custom.css" rel="stylesheet" type="text/css" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -25,9 +25,12 @@
 
     <div class="main-container">
 
-        @RenderBody();
+        @RenderBody()
 
     </div>
+
+    @{Html.RenderPartial("_Footer");}
+
     <script src="~/scripts/vendor/jquery.min.js"></script>
     <script src="~/scripts/vendor/bootstrap.min.js"></script>
     <script src="~/scripts/vendor/flexslider.min.js"></script>

@@ -1,0 +1,69 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "_Layout.cshtml";
+}
+
+
+
+<section class="cover fullscreen image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="image" class="background-image" src="~/media/dude-walkin.jpg" />
+    </div>
+    <div class="container v-align-transform">
+        <div class="row">
+            <!-- MODAL 1-->
+            <div class="col-sm-12 text-center">
+                <div class="modal-container">
+                    <a class="btn btn-lg btn-modal" href="#"> Opret som Ledig </a>
+                    <div class="foundry_modal text-center">
+                        <div class="col-sm-12">
+                            <div class="feature bordered text-center">
+                                <h4 class="uppercase">Opret Ledig Profil</h4>
+                                <form class="text-left">
+                                    <input type="text" name="name" placeholder="Navn" />
+                                    <input type="text" name="email" placeholder="Email" />
+                                    <input type="password" placeholder="Kodeord" />
+                                    <input type="password" placeholder="Gentag Kodeord" />
+                                    <input type="submit" value="Opret" />
+                                </form>
+                                <p class="mb0">
+                                    By signing up, you agree to our
+                                    <a href="#">Terms Of Use</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end modal-->
+            </div><!--end col-->
+            <!-- MODAL 1 END -->
+
+            <!-- MODAL 1-->
+            <div class="col-sm-12 text-center">
+                <div class="modal-container">
+                    <a class="btn btn-lg btn-modal" href="#">Opret som Erhverv</a>
+                    <div class="foundry_modal text-center">
+                        <div class="col-sm-12">
+                            <div class="feature bordered text-center">
+                                <h4 class="uppercase">Opret Erhverv Profil</h4>
+                                <form class="text-left">
+                                    <input type="text" name="name" placeholder="Navn" />
+                                    <input type="text" name="email" placeholder="Email" />
+                                    <input type="password" placeholder="Kodeord" />
+                                    <input type="password" placeholder="Gentag Kodeord" />
+                                    <a class="btn" href="/confirmation/">Opret</a>
+                                </form>
+                                <p class="mb0">
+                                    By signing up, you agree to our
+                                    <a href="#">Terms Of Use</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end modal-->
+            </div><!--end col-->
+            <!-- MODAL 1 END -->
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
